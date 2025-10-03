@@ -1,0 +1,9 @@
+{
+  "short_name": "Tâm - Hồng",
+  "name": "Lễ Thành Hôn - Tâm - Hồng",
+  "description": "Thiệp mời online Lễ Thành Hôn của Tâm - Hồng",
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#9E8A78",
+  "background_color": "#FDFBF7"
+}

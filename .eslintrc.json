@@ -1,0 +1,9 @@
+{
+  "rules": {
+    "no-plusplus": "off",
+    "no-await-in-loop": "off",
+    "@typescript-eslint/no-shadow": "off",
+    "arrow-body-style": "off",
+    "import/no-duplicates": "off"
+  }
+} 

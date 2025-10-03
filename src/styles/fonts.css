@@ -1,0 +1,43 @@
+@font-face {
+  font-family: 'ClassiqueSaigon';
+  src: url('/public/fonts/ClassiqueSaigonFull.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'TPLeMajor';
+  src: url('/public/fonts/TPLeMajor-Regular.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap; /* gợi ý thêm để tối ưu hiển thị web */
+}
+
+
+@font-face {
+  font-family: 'china';
+  src: url('/public/fonts/china.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'SVN-Gotham';
+  src: url('/public/fonts/SVN-Gotham.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'SVN-GothamLight';
+  src: url('/public/fonts/SVN-GothamLight.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+@font-face {
+  font-family: 'SVN-GothamLightItalic';
+  src: url('/public/fonts/SVN-GothamLightItalic.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+
