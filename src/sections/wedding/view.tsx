@@ -22,6 +22,7 @@ import { weddingData } from './weddingData';
 
 const backgroundImages = [
   'https://res.cloudinary.com/dq0fochj2/image/upload/f_auto,q_auto,w_1200/v1759212503/h21_xq2mnz.jpg',
+"https://res.cloudinary.com/dq0fochj2/image/upload/f_auto,q_auto,w_1200/v1759212501/h10_buoyak.jpg",
   'https://res.cloudinary.com/dq0fochj2/image/upload/f_auto,q_auto,w_1200/v1759416852/mainnn_v061ye.jpg',
 "https://res.cloudinary.com/dq0fochj2/image/upload/f_auto,q_auto,w_1200/v1759212506/h29_iaqvdn.jpg",
 "https://res.cloudinary.com/dq0fochj2/image/upload/f_auto,q_auto,w_1200/v1759212506/h19_vslpgx.jpg",
@@ -40,7 +41,6 @@ const backgroundImages = [
 "https://res.cloudinary.com/dq0fochj2/image/upload/f_auto,q_auto,w_1200/v1759212501/h5_pp3os8.jpg",
 "https://res.cloudinary.com/dq0fochj2/image/upload/f_auto,q_auto,w_1200/v1759296146/codau_r3psnb.jpg",
 "https://res.cloudinary.com/dq0fochj2/image/upload/f_auto,q_auto,w_1200/v1759296144/chure_mgmfhm.jpg",
-"https://res.cloudinary.com/dq0fochj2/image/upload/f_auto,q_auto,w_1200/v1759212501/h10_buoyak.jpg",
 "https://res.cloudinary.com/dq0fochj2/image/upload/f_auto,q_auto,w_1200/v1759212500/h8_hivezb.jpg",
 "https://res.cloudinary.com/dq0fochj2/image/upload/f_auto,q_auto,w_1200/v1759212500/h6_y9cjbz.jpg",
 "https://res.cloudinary.com/dq0fochj2/image/upload/f_auto,q_auto,w_1200/v1759212500/h12_eisomm.jpg",

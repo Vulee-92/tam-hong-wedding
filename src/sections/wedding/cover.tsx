@@ -10,7 +10,7 @@ const palePink = '#fdcdddff';
 const lightAqua = '#e0f7fa';
 
 const backgroundImages = [
-    "https://res.cloudinary.com/dq0fochj2/image/upload/v1759416852/mainnn_v061ye.jpg",
+    "https://res.cloudinary.com/dq0fochj2/image/upload/f_auto,q_auto,w_1200/v1759212501/h10_buoyak.jpg",
 ];
 
 const RootStyle = styled('div')(({ theme }) => ({
