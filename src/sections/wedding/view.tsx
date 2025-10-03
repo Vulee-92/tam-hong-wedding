@@ -73,7 +73,7 @@ const MusicContainer = styled(motion.div)(() => ({
     left: 0,
     right: 0,
     bottom: 0,
-    backgroundImage: `url('https://res.cloudinary.com/dq0fochj2/image/upload/v1759212503/h21_xq2mnz.jpg')`,
+    backgroundImage: `url('https://res.cloudinary.com/dq0fochj2/image/upload/f_auto,q_auto,w_1200/v1759212503/h21_xq2mnz.jpg')`,
     backgroundSize: 'cover',
     backgroundPosition: 'center center',
     backgroundRepeat: 'no-repeat',
