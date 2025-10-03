@@ -62,10 +62,10 @@ export const weddingData = {
   // Thông tin chuyển khoản
   banksGroom: 
     {
-      owner: "LE TIEN DAT",
-      bank: "BIDV - Ngân hàng Đầu tư và phát triển Việt Nam", // Sửa lại tên ngân hàng để dễ đọc
-      bankCode: "BIDV", // Thêm mã ngân hàng
-      account: "2110728284",
+      owner: "TRAN HUU TAM",
+      bank: "VIETCOMBANK", // Sửa lại tên ngân hàng để dễ đọc
+      bankCode: "VCB", // Thêm mã ngân hàng
+      account: "0731000900760",
       role: "groom",
     },
    

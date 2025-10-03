@@ -193,17 +193,17 @@ export function WeddingGiftSection() {
           viewport={{ once: true, amount: 0.3 }}
         >
           <Grid container spacing={2} justifyContent="center">
-            {/* <Grid item xs={12} md={12}>
+            <Grid item xs={12} md={12}>
               <Card variants={itemVariants}>
                 <FlexBox container>
                   <Grid item xs={12} sm={4}>
                     <QRWrapper>
-                      <QRImage src="https://res.cloudinary.com/dxfsa7foy/image/upload/v1758699834/chure_v9ktae.png" alt="Mã QR Cô Dâu" />
+                      <QRImage src="https://res.cloudinary.com/dq0fochj2/image/upload/v1759460867/churetam_kpf8qh.png" alt="Mã QR Chú Rể" />
                     </QRWrapper>
                   </Grid>
                   <Grid item xs={12} sm={8}>
                     <AccountDetails>
-                      <RoleTitle>CHÚ RỂ</RoleTitle>
+                      <RoleTitle>Chú Rể</RoleTitle>
                       <OwnerName>{weddingData.banksGroom.owner}</OwnerName>
                       <Box sx={{ display: 'flex', alignItems: 'center', marginTop: '12px' }}>
                         <AccountDetailsText sx={{ mr: 1 }}>
@@ -214,8 +214,8 @@ export function WeddingGiftSection() {
                   </Grid>
                 </FlexBox>
               </Card>
-            </Grid> */}
-            <Grid item xs={12} md={12}>
+            </Grid>
+            {/* <Grid item xs={12} md={12}>
               <Card variants={itemVariants}>
                 <FlexBox container>
                   <Grid item xs={12} sm={4}>
@@ -236,7 +236,7 @@ export function WeddingGiftSection() {
                   </Grid>
                 </FlexBox>
               </Card>
-            </Grid>
+            </Grid> */}
           </Grid>
         </motion.div>
 
