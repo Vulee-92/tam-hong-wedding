@@ -10,7 +10,7 @@ const RootStyle = styled('div')(({ theme }) => ({
   height: '100vh',
   width: "100%",
   display: 'flex',
-  backgroundImage: `url('https://res.cloudinary.com/dq0fochj2/image/upload/v1759212504/h22_a1jvhc.jpg')`,
+  backgroundImage: `url('https://res.cloudinary.com/dq0fochj2/image/upload/f_auto,q_auto,w_1400/v1759212504/h22_a1jvhc.jpg')`,
   backgroundSize: 'cover',
 
   maxWidth: '600px', margin: '0 auto', overflowX: 'hidden',
