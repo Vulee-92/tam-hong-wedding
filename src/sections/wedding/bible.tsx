@@ -297,7 +297,7 @@ const InvitationWrapper = styled(Box)({
 });
 
 const InvitationText = styled(Typography)(({ theme }) => ({
-    fontFamily: "'SVN-GothamLight', serif",
+    fontFamily: "'Playfair Display', sans-serif",
     fontSize: '0.8rem',
     color: '#000',
     letterSpacing: '0.25em',
@@ -315,40 +315,92 @@ const InvitationText = styled(Typography)(({ theme }) => ({
     '&::after': { right: 'calc(50% - 100px)' },
 }));
 
-const GuestNameWrapper = styled('div')({
+// Các component mới để xử lý việc xuống dòng và căn chỉnh
+const GuestNameContainer = styled('div')({
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
+    textAlign: 'center',
+    width: '100%',
+});
+
+const GuestLine = styled(Box)({
     position: 'relative',
-    display: 'inline-block',
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
+    width: '100%',
+    marginBottom: '10px', // Khoảng cách giữa các dòng
 });
 
-const GuestNameLine = styled('div')({
+const GuestText = styled(Typography)({
+    position: 'relative',
+    fontFamily: "'Oooh Baby', cursive",
+    fontSize: '2rem',
     color: '#000',
-    letterSpacing: '0.4em',
-    fontSize: '1rem',
+    lineHeight: 1,
+    zIndex: 2,
+    marginBottom: '-8px', // Sử dụng margin âm để kéo text xuống
 });
 
-const GuestNameOverlay = styled('span')({ // Thay đổi thành span thông thường
-    position: 'absolute',
-    left: '50%',
-    top: '30%',
-    transform: 'translate(-50%, -50%)',
-    textTransform: "capitalize",
-    fontFamily: "'SVN-GothamLightItalic', serif !important",
-    fontSize: '1.4rem',
-    whiteSpace: 'nowrap',
-    color: '#000',
-    overflow: 'hidden',
+const DottedLine = styled('div')({
+    width: '80%',
+    borderBottom: '2px dotted #000',
+    position: 'relative',
+    zIndex: 1,
 });
 
 export function BibleSection() {
     const [guestName, setGuestName] = useState<string | null>(null);
+    const [nameLines, setNameLines] = useState<string[]>([]);
+
+  useEffect(() => {
+  let nameFromUrl = null;
+
+  // Thử lấy bằng URLSearchParams trước
+  const params = new URLSearchParams(window.location.search);
+  nameFromUrl = params.get("name");
+
+  // Nếu bị Messenger cắt cụt (chỉ còn "Đỗ"), thử lấy từ href
+  if (!nameFromUrl && typeof window !== "undefined") {
+    const href = decodeURIComponent(window.location.href);
+    const match = href.match(/name=(.*)/); // lấy mọi thứ sau "name="
+    if (match) {
+      nameFromUrl = match[1].trim();
+    }
+  }
+
+  if (nameFromUrl) {
+    // Chuẩn hóa khoảng trắng
+    const normalizedName = nameFromUrl.replace(/\s+/g, " ").trim();
+    setGuestName(normalizedName);
+  }
+}, []);
+
 
     useEffect(() => {
-        const params = new URLSearchParams(window.location.search);
-        const nameFromUrl = params.get('name');
-        if (nameFromUrl) {
-            setGuestName(decodeURIComponent(nameFromUrl));
+        if (guestName) {
+            const words = guestName.split(' ');
+            let lines: string[] = [];
+            let currentLine = '';
+            const maxCharsPerLine = 25;
+
+            words.forEach(word => {
+                if ((currentLine + ' ' + word).trim().length <= maxCharsPerLine) {
+                    currentLine = (currentLine + ' ' + word).trim();
+                } else {
+                    if (currentLine) {
+                        lines.push(currentLine);
+                    }
+                    currentLine = word;
+                }
+            });
+            if (currentLine) {
+                lines.push(currentLine);
+            }
+            setNameLines(lines);
         }
-    }, []);
+    }, [guestName]);
 
     return (
         <RootStyle>
@@ -357,14 +409,13 @@ export function BibleSection() {
                     xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 0 1440 320"
                     preserveAspectRatio="none"
-                    fill='#000'
+                    fill='#333'
                 >
                     <path
                         d="M0,64L60,80C120,96,240,128,360,138.7C480,149,600,139,720,122.7C840,107,960,85,1080,90.7C1200,96,1320,128,1380,144L1440,160L1440,320L1380,320C1320,320,1200,320,1080,320C960,320,840,320,720,320C600,320,480,320,360,320C240,320,120,320,60,320L0,320Z"
                     />
                 </svg>
             </TopCurveTransition>
-
             <Container
                 maxWidth="lg"
                 sx={{
@@ -377,21 +428,12 @@ export function BibleSection() {
                 }}
             >
                 <InvitationCard
-                    // Hiệu ứng zoom in tổng thể khi cuộn tới
                     initial={{ opacity: 0, scale: 0.9 }}
                     whileInView={{ opacity: 1, scale: 1 }}
                     transition={{ duration: 1.5, ease: 'easeOut' }}
                     viewport={{ once: true, amount: 0.8 }}
                 >
-                    {/* <Quote>
-                        <Typography className="quote-text">
-                            Nếu Đức Chúa Trời yêu thương chúng ta như thế, <br /> chúng ta cũng phải yêu thương nhau.
-                        </Typography>
-                        <Typography className="verse">
-                            {weddingData.bibleVerse.reference}
-
-                        </Typography>
-                    </Quote> */}
+                   
                     <SaveTheDate>
                         THIỆP THÀNH HÔN
                     </SaveTheDate>
@@ -402,36 +444,26 @@ export function BibleSection() {
                                 Hữu Tâm
                             </Typography>
                             <Box className="divider-decor">
-                                {/* <div className="line" />
+                                <div className="line" />
                                 <div className="leaf-icon top" />
-                                <div className="leaf-icon bottom" /> */}
-                                <Typography
-                                    sx={{
-                                        fontFamily: "'TPLeMajor', serif !important",
-                                        display: 'inline-block',
-                                        color: "#000",
-                                        mx: 2,
-                                        fontSize: 20
-                                    }}
-                                >
-                                    &
-                                </Typography>
+                                <div className="leaf-icon bottom" />
                             </Box>
                             <Typography className="name">
                                Nguyễn Hồng
                             </Typography>
                         </Names>
                     </NamesWrapper>
-
                     <InvitationWrapper>
                         <InvitationText>Trân Trọng Kính Mời</InvitationText>
                         {guestName && (
-                            <GuestNameWrapper>
-                                <GuestNameLine>......................</GuestNameLine>
-                                <GuestNameOverlay>
-                                    {guestName}
-                                </GuestNameOverlay>
-                            </GuestNameWrapper>
+                            <GuestNameContainer>
+                                {nameLines.map((line, index) => (
+                                    <GuestLine key={index}>
+                                        <GuestText>{line}</GuestText>
+                                        <DottedLine />
+                                    </GuestLine>
+                                ))}
+                            </GuestNameContainer>
                         )}
                     </InvitationWrapper>
                 </InvitationCard>
