@@ -309,7 +309,7 @@ export function RsvpSection() {
         transition={{ duration: 0.5 }}
       >
         <ConfirmationContent>
-          <BrideAndGroomImage src="https://res.cloudinary.com/dxfsa7foy/image/upload/f_auto,q_auto,w_1200/v1758636036/h16_nrifhj.jpg" alt="Bride and Groom" />
+          <BrideAndGroomImage src="https://res.cloudinary.com/dq0fochj2/image/upload/f_auto,q_auto,w_1200/v1759212502/h13_bk7gcc.jpg" alt="Bride and Groom" />
           {attending === 'yes' ? (
             <>
               {/* <motion.div initial={{ scale: 0 }} animate={{ scale: 1 }} transition={{ delay: 0.3 }}>
