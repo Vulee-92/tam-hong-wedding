@@ -274,7 +274,8 @@ export function WelcomeSection({ detailsRef }: { detailsRef: RefObject<HTMLDivEl
             <AnnouncementTitle><b>LỄ THÀNH HÔN</b> CỦA CHÚNG TÔI</AnnouncementTitle>
             <Divider sx={{ my: 2, borderColor: 'rgba(0,0,0,0.1)' }} />
             <CoupleNames>
-                         <Typography className="name">{weddingData.bride.name}</Typography>
+              <Typography className="name">{weddingData.groom.name}</Typography>
+
               <Typography sx={{
                 fontFamily: "'SVN-GothamLight', serif !important",
                 fontSize: '0.75rem', color: COLORS.text
@@ -282,7 +283,8 @@ export function WelcomeSection({ detailsRef }: { detailsRef: RefObject<HTMLDivEl
                 {/* Út Nữ */}
               </Typography>
               <Typography className="divider-text">&</Typography>
-              <Typography className="name">{weddingData.groom.name}</Typography>
+                                     <Typography className="name">{weddingData.bride.name}</Typography>
+
 
               <Typography sx={{
                 fontFamily: "'SVN-GothamLight', serif !important",
