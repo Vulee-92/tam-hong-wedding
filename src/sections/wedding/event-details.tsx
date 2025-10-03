@@ -453,7 +453,8 @@ export function EventDetailsSection() {
                 zIndex: 1000,
                 borderRadius: '12px',
                 '&:hover': {
-                  backgroundColor: '#555',
+                  backgroundColor: '#C62828',
+                  color: '#fff'
                 },
               }}
             >
